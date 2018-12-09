@@ -1,0 +1,25 @@
+7dc1c85aafab4023b01d6f163d55b7f9-- Password to login to jenkin as an Admin : Path:-#sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+
+Steps:
+1. Create a Ubuntu EC2 instance and SG group allow SSH, http trafic (Else All traffic).
+2. Install JDK 8/9, best JDK 8
+sudo add-apt-repository ppa:webupd8team/java
+
+sudo apt install oracle-java8-installer
+sudo apt install oracle-java8-set-default
+
+Jenkins Package installation :
+wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+
+sudo apt-add-repository "deb https://pkg.jenkins.io/debian-stable binary/"
+
+sudo apt-get update
+sudo apt-get install jenkins
+
+#sudo cat /var/lib/jenkins/secrets/initialAdminPassword and change the password and user name :-Soumya
+Passord-Oct@2018
+While starting the Jenkins services after staring an inactive instanvce, you must have to restart the Jenkins Services :
+
+sudo systemctl restart jenkins
+
